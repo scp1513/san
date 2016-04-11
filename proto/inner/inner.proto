@@ -1,0 +1,40 @@
+package inner;
+
+message ReqSrvTime {
+	optional uint32 header  = 1 [default = 101];
+	required int64  reqTime = 2;
+}
+
+message RepSrvTime  {
+	optional uint32 header  = 1 [default = 201];
+	required int64  reqTime = 2;
+	required int64  srvTime = 3;
+}
+
+message ReqSrvLogin {
+	optional uint32 header = 1 [default = 102];
+	required uint32 type   = 2;
+	required string sign   = 3;
+	required int64  time   = 4;
+}
+
+message RepSrvLogin {
+	optional uint32 header  = 1 [default = 202];
+	required bool   success = 2;
+	required uint32 srvID   = 3;
+	optional string mode    = 4 [default = "test"];
+}
+
+message NfyShutdown {
+	optional uint32 header = 1 [default = 303];
+
+	// 1: 正常关闭
+	// 2: 等待所有客户端连接断开
+	// 3: 强制关闭
+	required uint32 flag   = 2;
+}
+
+message NfyCliDiscon {
+	optional uint32 header = 1 [default = 304];
+	required uint64 sid    = 2;
+}

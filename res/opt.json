@@ -1,0 +1,38 @@
+{
+	"game": {
+		"ip":"0.0.0.0",
+		"port":8889,
+		"mode":"debug",
+		"mgo_host":"127.0.0.1:27017",
+		"mgo_user":"root",
+		"_mgo_pass":"root",
+		"mgo_dbname":"san",
+		"ip_list":["127.0.0.1"],
+		"res_dir":"./res",
+		"daily_reset_time":"00:00:00",
+		"weekly_reset_time_desc":["星期几[0,6]","时间"],
+		"weekly_reset_time":["1","00:00:00"],
+		"monthly_reset_time_desc":["几号[1,28]","时间"],
+		"monthly_reset_time":["1","00:00:00"]
+	},
+
+	"gate": {
+		"ip":"127.0.0.1",
+		"port":8989,
+		"game_ip":"127.0.0.1",
+		"game_port":8889,
+		"check_srv_time":true
+	},
+
+	"portal": {
+		"run_mode":"debug",
+		"ssl_cert_path":"res/ssl/cert.pem",
+		"ssl_key_path":"res/ssl/key.pem",
+		"http_port":80,
+		"https_port":443,
+		"db_host":"127.0.0.1:3306",
+		"db_user":"root",
+		"db_pass":"root",
+		"db_name":"portal"
+	}
+}

@@ -1,0 +1,6 @@
+package nfy;
+
+message Shutdown {
+	optional uint32 header = 1 [default = 3001];
+	optional string msg    = 2;
+}

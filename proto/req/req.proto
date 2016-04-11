@@ -1,0 +1,25 @@
+package req;
+
+message SrvTime {
+	optional uint32 header = 1 [default = 1002];
+}
+
+message EncInfo {
+	optional uint32 header = 1 [default = 1003];
+}
+
+message LoginVerify {
+	optional uint32 header   = 1 [default = 1101];
+	optional string token    = 2;
+	optional string account  = 3;
+	optional string password = 4;
+}
+
+message RoleList {
+	optional uint32 header = 1 [default = 1102];
+}
+
+message RoleData {
+	optional uint32 header = 1 [default = 1103];
+	required uint64 roleID = 2;
+}
