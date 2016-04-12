@@ -5,7 +5,7 @@ message ReqSrvTime {
 	required int64  reqTime = 2;
 }
 
-message RepSrvTime  {
+message RspSrvTime  {
 	optional uint32 header  = 1 [default = 201];
 	required int64  reqTime = 2;
 	required int64  srvTime = 3;
@@ -18,7 +18,7 @@ message ReqSrvLogin {
 	required int64  time   = 4;
 }
 
-message RepSrvLogin {
+message RspSrvLogin {
 	optional uint32 header  = 1 [default = 202];
 	required bool   success = 2;
 	required uint32 srvID   = 3;

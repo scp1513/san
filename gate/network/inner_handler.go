@@ -11,13 +11,13 @@ import (
 )
 
 func init() {
-	RegisterProto(&inner.RepSrvTime{}, handleRepSrvTime)
-	RegisterProto(&inner.RepSrvLogin{}, handleRepSrvLogin)
+	RegisterProto(&inner.RspSrvTime{}, handleRspSrvTime)
+	RegisterProto(&inner.RspSrvLogin{}, handleRspSrvLogin)
 	RegisterProto(&inner.NfyShutdown{}, handleNfyShutdown)
 }
 
-func handleRepSrvTime(msg interface{}) {
-	m := msg.(*inner.RepSrvTime)
+func handleRspSrvTime(msg interface{}) {
+	m := msg.(*inner.RspSrvTime)
 	t1 := m.GetReqTime()
 	t2 := time.Now().UnixNano()
 	srvTime := m.GetSrvTime()
@@ -31,9 +31,9 @@ func handleRepSrvTime(msg interface{}) {
 	}
 }
 
-func handleRepSrvLogin(msg interface{}) {
-	log.Println("handleRepSrvLogin")
-	m := msg.(*inner.RepSrvLogin)
+func handleRspSrvLogin(msg interface{}) {
+	log.Println("handleRspSrvLogin")
+	m := msg.(*inner.RspSrvLogin)
 	if !m.GetSuccess() {
 		sendReqSrvLoginMsg()
 		return
